@@ -7,7 +7,7 @@ const odemeSchema = mongoose.Schema({
         required: true
     },
     odemeMiktar: {
-        type: String,
+        type: Number,
         required: true
     },
     odemeUserID: {
