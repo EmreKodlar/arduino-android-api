@@ -32,7 +32,7 @@ router.get("/:id", async (req, res)=>{
 })
 
 // userid'ye göre iş getirme isteği
-router.get("/:userid", async (req, res)=>{  
+router.get("/userid/:userid", async (req, res)=>{  
     Degerler.findById(req.params.userid)
     .then((Degerler)=> {
         res.json(Degerler);
