@@ -93,9 +93,20 @@ router.get("/", async (req, res)=>{
         });
 })
 
-// id'ye göre iş getirme isteği
+// id'ye göre user getirme isteği
 router.get("/:id", async (req, res)=>{  
     User.findById(req.params.id)
+    .then((User)=> {
+        res.json(User);
+    })
+    .catch((err)=> {
+            res.json(err);
+        });
+})
+
+// mail'e göre user getirme isteği
+router.get("/:email", async (req, res)=>{  
+    User.findById(req.params.email)
     .then((User)=> {
         res.json(User);
     })
