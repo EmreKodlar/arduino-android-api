@@ -105,7 +105,7 @@ router.get("/:id", async (req, res)=>{
 })
 
 // mail'e göre user getirme isteği
-router.get("/:email", async (req, res)=>{  
+router.get("/email/:email", async (req, res)=>{  
     User.findById(req.params.email)
     .then((User)=> {
         res.json(User);
