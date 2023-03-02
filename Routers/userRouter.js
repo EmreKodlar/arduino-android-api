@@ -34,8 +34,8 @@ router.post("/signup", async (req, res)=>{ // bu /signup'a gelen post isteği (k
 // localhost:5000/users/signin POST request
 router.post("/signin", async (req,res)=>{ // bu da giriş yapma isteği
     try {
-        const {email, password} = req.body;
-        const user = await User.findOne({email})
+        const { email, password } = req.body;
+        const user = await User.findOne({ email })
         if(!user)
             return res.status(400).json({message: "user does not exist"})
         
