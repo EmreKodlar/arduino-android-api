@@ -31,6 +31,17 @@ router.get("/:id", async (req, res)=>{
         });
 })
 
+// userid'ye göre iş getirme isteği
+router.get("/:userid", async (req, res)=>{  
+    Degerler.findById(req.params.userid)
+    .then((Degerler)=> {
+        res.json(Degerler);
+    })
+    .catch((err)=> {
+            res.json(err);
+        });
+})
+
 //-----------ekle---------------
  
 router.post("/", async (req, res)=>{  
